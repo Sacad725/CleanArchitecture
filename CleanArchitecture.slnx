@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md.txt" />
+  </Folder>
+  <Project Path="API layer/API_Layer.csproj" />
+  <Project Path="Application_Layer/Application_Layer.csproj" Id="1b42b556-6e36-4d2f-a323-dde093459633" />
+  <Project Path="Domain layer/Domain_Layer.csproj" />
+  <Project Path="Infrastructure layer/Infrastructure_Layer.csproj" />
+</Solution>
