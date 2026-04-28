@@ -14,7 +14,7 @@ Projektet hanterar **Users** och **Products** där en användare kan äga flera 
 
 ```json
 "ConnectionStrings": {
-  "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=CleanApiDb;Trusted_Connection=True;TrustServerCertificate=True"
+  "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=example;Trusted_Connection=True;TrustServerCertificate=True"
 }
 ```
 
@@ -33,7 +33,7 @@ dotnet run --project API_Layer
 ## 4. Öppna Scalar
 
 ```plaintext
-https://localhost:7132/scalar
+
 ```
 
 ---
