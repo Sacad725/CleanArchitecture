@@ -1,12 +1,12 @@
 using Application_Layer;
 using Application_Layer.mapping;
 using Domain_layer.Interfaces;
-using Infrastructure_layer.Data;
-using Infrastructure_layer.Repositories;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 using API_Layer.Extensions;
+using Infrastructure_layer;
+
 
 
 
@@ -24,7 +24,10 @@ namespace API_Layer
             // Application Layer (MediatR)
             builder.Services.AddApplication();
 
-        
+            // 🔹 Kopplar Infrastructure Layer (databas + repository)
+            builder.Services.AddInfrastructure(builder.Configuration);
+
+
 
             // istället för all JWT kod 
             builder.Services.AddJwtAuthentication(builder.Configuration);
@@ -38,22 +41,7 @@ namespace API_Layer
             builder.Services.AddOpenApi();
 
         
-            // DATABAS (DbContext)
-          
-            // Kopplar vår DbContext till SQL Server
-            // Hämtar connection string från appsettings.json
-            builder.Services.AddDbContext<AppDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-           
-            // REPOSITORY
-
-            // Berättar för systemet att när någon frågar efter IProductRepository
-            // så systemet använda ProductRepository
-            builder.Services.AddScoped<IProductRepository, ProductRepository>();
-
-         // Berättar för systemet att när någon frågar efter IUserRepository
-            builder.Services.AddScoped<IUserRepository, UserRepository>();
+            
 
 
             // BUILD APP
