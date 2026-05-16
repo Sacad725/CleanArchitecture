@@ -14,7 +14,7 @@ Projektet hanterar **Users** och **Products** där en användare kan äga flera 
 
 ```json
 "ConnectionStrings": {
-  "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=example;Trusted_Connection=True;TrustServerCertificate=True"
+  "DefaultConnection": "Server==example;Trusted_Connection=True;TrustServerCertificate=True"
 }
 ```
 
